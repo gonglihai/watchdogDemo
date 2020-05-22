@@ -48,6 +48,8 @@ public class WatchDogAspect {
         //注解设置的多少毫秒后超时
         long timeout = methodSignature.getMethod().getAnnotation(red.glh.watchdog.watchdog.annotation.WatchDog.class).value();
         //狗id,需要唯一,而且beforeMethod和afterMethod两方法必须都能获取到,暂时取joinPoint的hashCode(不确定是否会重复,如果重复会有bug)
+        //todo 1.可将狗的Map变为list或者set,直接存储JoinPoint对象
+        //todo 2.或者添加前判断hashCode是否存在,存在另外处理
         int dogId = joinPoint.hashCode();
         //方法名
         String methodName = joinPoint.getSignature().getName();
