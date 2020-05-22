@@ -6,3 +6,7 @@ AOP方法超时判断
   
 方法执行前: 本次调用的狗插入狗集合,新起线程,线程等待超时后查询狗集合是否存在本次调用的狗  
 方法执行后: 狗集合移除狗
+
+## 流程图
+
+![Image text](src/main/resources/static/img/watchdog.png)
